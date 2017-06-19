@@ -13,13 +13,14 @@ tags = csvread(strcat(folder_name, "/", "tags.csv"));
 % Adjust column positions
 data_t(:,2) = EDA(3:end);
 data_t(1,1) = EDA(1);
+Ts = 1/EDA(2); %Time steps = 1/sampling frequency
 
 % Place 0 as a default event for all timestamps
 data_t(:,3) = zeros(length(data_t),1);
 
 % Add timestamp to all rows
 for(n=2:length(data_t))
-    data_t(n,1)=data_t(1,1)+(1/EDA(2))*(n-1);
+    data_t(n,1)=data_t(1,1)+Ts*(n-1);
 end
 
 % Add an event at the closest timestamps (rounded upwards always)
