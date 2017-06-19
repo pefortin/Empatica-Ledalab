@@ -9,6 +9,7 @@ How to use:
 2. Call empatica2ledalab.m using this syntax:
         empatica2ledalab(type)
         where type is either 2 or 3 and correspond to Ledalab type 2 and 3 text files.
-        Due to some memory errors, type 1 will not work.
+                -Type 2 starts time at 0
+                -Type 3 uses UNIX epoch time
 3. Using the GUI, select the directory containing the unzipped empatica .CSV files
 4. Enjoy your Ledalab compatible file named "reformated_data.csv" in the same directory as the other CSV files
