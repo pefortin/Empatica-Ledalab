@@ -8,7 +8,14 @@ folder_name = uigetdir('', 'Select the directory containing the .csv files as ge
 
 % Read EDA and tags CSV files
 EDA = csvread(strcat(folder_name, "/", "EDA.csv"));
-tags = csvread(strcat(folder_name, "/", "tags.csv"));
+try
+    tags = csvread(strcat(folder_name, "/", "tags.csv"));
+catch
+    fprintf('ERROR: The new file was not generated!\n')
+    fprintf('tags.csv seems to be empty.\n')
+    fprintf('If there are no tagged events, you can directly import in Ledalab without empatica2ledalab.\n')
+    return
+end
 
 % Adjust column positions
 data_t(:,2) = EDA(3:end);
