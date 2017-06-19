@@ -1,5 +1,7 @@
 # Empatica-Ledalab
-Function to convert Empatica generated CSV files into Ledalab Type 2 or 3 supported text files with timestamped events
+Function to convert Empatica generated CSV files into Ledalab Type 2 or 3 supported text files with timestamped events.
+
+Note: This function is useless and will not do anything for you if you do not have tagged events.
 
 How to use:
 
